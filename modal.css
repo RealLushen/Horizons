@@ -1,0 +1,276 @@
+/* Modal Styles for Horizons RPG */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    padding: var(--space-lg);
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background-color: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    animation: modalFadeIn 0.3s ease;
+}
+
+.modal-close {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+    background: none;
+    border: none;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.modal-close:hover {
+    color: var(--text-primary);
+    background-color: var(--bg-tertiary);
+}
+
+/* Item Preview Styles */
+.item-preview {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.item-preview-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.item-preview-icon {
+    font-size: 2.5rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+}
+
+.item-preview-title {
+    flex-grow: 1;
+}
+
+.item-preview-title h3 {
+    margin-bottom: var(--space-xs);
+    font-size: 1.5rem;
+}
+
+.item-preview-type {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.item-preview-description {
+    color: var(--text-secondary);
+    line-height: 1.5;
+    padding: var(--space-md);
+    background-color: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    font-style: italic;
+}
+
+.item-preview-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+}
+
+.preview-stat {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-sm);
+    background-color: var(--bg-tertiary);
+    border-radius: var(--radius-sm);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.stat-value {
+    font-weight: 600;
+}
+
+.stat-negative {
+    color: #e74c3c;
+}
+
+.item-preview-actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    margin-top: var(--space-md);
+}
+
+/* Equipment Modal Styles */
+.equipment-modal-header {
+    margin-bottom: var(--space-lg);
+    text-align: center;
+}
+
+.equipment-modal-header h3 {
+    font-size: 1.5rem;
+    color: var(--accent-primary);
+}
+
+.currently-equipped {
+    margin-bottom: var(--space-lg);
+    padding: var(--space-md);
+    background-color: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+}
+
+.currently-equipped h4 {
+    margin-bottom: var(--space-md);
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.equipped-item-details {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.equipped-item-icon {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-secondary);
+    border-radius: var(--radius-sm);
+}
+
+.equipped-item-info {
+    flex-grow: 1;
+}
+
+.equipped-item-name {
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+}
+
+.equipped-item-stats {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.available-equipment h4 {
+    margin-bottom: var(--space-md);
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.available-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.available-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-sm);
+    background-color: var(--bg-tertiary);
+    border-radius: var(--radius-sm);
+    transition: transform 0.2s ease;
+}
+
+.available-item:hover {
+    transform: translateX(5px);
+}
+
+.available-item.item-unavailable {
+    opacity: 0.6;
+}
+
+.available-item-icon {
+    font-size: 1.2rem;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-secondary);
+    border-radius: var(--radius-sm);
+}
+
+.available-item-info {
+    flex-grow: 1;
+}
+
+.available-item-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: var(--space-xs);
+}
+
+.available-item-stats {
+    display: flex;
+    gap: var(--space-md);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.no-items-available {
+    text-align: center;
+    padding: var(--space-lg);
+    color: var(--text-muted);
+}
+
+.error-message {
+    color: #e74c3c;
+    margin-top: var(--space-sm);
+    font-size: 0.9rem;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

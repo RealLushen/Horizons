@@ -1,0 +1,75 @@
+/* Notification Styles for Horizons RPG */
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    min-width: 250px;
+    max-width: 400px;
+    transition: transform 0.3s ease, opacity 0.5s ease;
+    transform: translateX(0);
+}
+
+.notification-info {
+    background-color: var(--bg-tertiary);
+    border-left: 5px solid #3498db;
+}
+
+.notification-success {
+    background-color: rgba(46, 204, 113, 0.2);
+    border-left: 5px solid #2ecc71;
+}
+
+.notification-warning {
+    background-color: rgba(241, 196, 15, 0.2);
+    border-left: 5px solid #f1c40f;
+}
+
+.notification-error {
+    background-color: rgba(231, 76, 60, 0.2);
+    border-left: 5px solid #e74c3c;
+}
+
+.notification-close {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: var(--space-xs);
+    margin-left: var(--space-sm);
+}
+
+.notification.fade-out {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+/* Multiple notifications stacking */
+.notification:nth-child(1) {
+    top: 20px;
+}
+
+.notification:nth-child(2) {
+    top: 90px;
+}
+
+.notification:nth-child(3) {
+    top: 160px;
+}
+
+.notification:nth-child(4) {
+    top: 230px;
+}
+
+.notification:nth-child(5) {
+    top: 300px;
+}

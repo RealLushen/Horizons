@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character - Horizons RPG</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/notification.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/character.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Header with Navigation -->
+        <header class="game-header">
+            <div class="logo">Horizons RPG</div>
+            <nav class="nav-links">
+                <a href="adventure.html" class="nav-link">Adventure</a>
+                <a href="inventory.html" class="nav-link">Inventory</a>
+                <a href="market.html" class="nav-link">Market</a>
+                <a href="character.html" class="nav-link">Character</a>
+            </nav>
+            <div class="player-info">
+                <span id="playerGold">0g</span>
+                <span id="playerLevel">Lvl 1</span>
+            </div>
+        </header>
+        
+        <!-- Main Game Content -->
+        <div class="game-content">
+            <div class="character-container">
+                <!-- Character Header -->
+                <div class="character-header">
+                    <h2 id="characterName">Character Name</h2>
+                    <div class="character-level">Level <span id="characterLevel">1</span></div>
+                </div>
+                
+                <!-- Character Profile -->
+                <div class="character-profile">
+                    <!-- Character Avatar and Stats -->
+                    <div class="character-info">
+                        <div class="character-avatar-container">
+                            <img id="characterAvatar" src="" alt="Character Avatar" class="character-avatar">
+                        </div>
+                        
+                        <div class="character-stats">
+                            <div class="character-progress">
+                                <div class="progress-info">
+                                    <span>Level:</span> 
+                                    <span id="levelProgress">0/0</span>
+                                </div>
+                                <div class="progress-container">
+                                    <div class="progress-bar" id="levelProgressBar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="character-stat-group">
+                                <h3>Combat Stats</h3>
+                                <div class="stat-grid">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Health:</span>
+                                        <span class="stat-value" id="statHealth">0/0</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Damage:</span>
+                                        <span class="stat-value" id="statDamage">0-0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="character-stat-group">
+                                <h3>Gathering Skills</h3>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span class="skill-name">Mining</span>
+                                        <span class="skill-level" id="miningLevel">1</span>
+                                    </div>
+                                    <div class="progress-container">
+                                        <div class="progress-bar" id="miningProgressBar" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span class="skill-name">Woodcutting</span>
+                                        <span class="skill-level" id="woodcuttingLevel">1</span>
+                                    </div>
+                                    <div class="progress-container">
+                                        <div class="progress-bar" id="woodcuttingProgressBar" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span class="skill-name">Fishing</span>
+                                        <span class="skill-level" id="fishingLevel">1</span>
+                                    </div>
+                                    <div class="progress-container">
+                                        <div class="progress-bar" id="fishingProgressBar" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Character Equipment -->
+                    <div class="character-equipment">
+                        <h3>Equipment</h3>
+                        <div class="equipment-grid">
+                            <div class="equipment-slot" data-slot="helmet">
+                                <div class="slot-label">Helmet</div>
+                                <div class="slot-item" id="helmetSlot">
+                                    <div class="empty-slot">Empty</div>
+                                </div>
+                            </div>
+                            <div class="equipment-slot" data-slot="shoulders">
+                                <div class="slot-label">Shoulders</div>
+                                <div class="slot-item" id="shouldersSlot">
+                                    <div class="empty-slot">Empty</div>
+                                </div>
+                            </div>
+                            <div class="equipment-slot" data-slot="chest">
+                                <div class="slot-label">Chest</div>
+                                <div class="slot-item" id="chestSlot">
+                                    <div class="empty-slot">Empty</div>
+                                </div>
+                            </div>
+                            <div class="equipment-slot" data-slot="hands">
+                                <div class="slot-label">Hands</div>
+                                <div class="slot-item" id="handsSlot">
+                                    <div class="empty-slot">Empty</div>
+                                </div>
+                            </div>
+                            <div class="equipment-slot" data-slot="legs">
+                                <div class="slot-label">Legs</div>
+                                <div class="slot-item" id="legsSlot">
+                                    <div class="empty-slot">Empty</div>
+                                </div>
+                            </div>
+                            <div class="equipment-slot" data-slot="feet">
+                                <div class="slot-label">Feet</div>
+                                <div class="slot-item" id="feetSlot">
+                                    <div class="empty-slot">Empty</div>
+                                </div>
+                            </div>
+                            <div class="equipment-slot" data-slot="weapon">
+                                <div class="slot-label">Weapon</div>
+                                <div class="slot-item" id="weaponSlot">
+                                    <div class="empty-slot">Empty</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Character Achievements & Stats -->
+                <div class="character-achievements">
+                    <h3>Adventure Statistics</h3>
+                    <div class="achievements-grid">
+                        <div class="achievement-item">
+                            <div class="achievement-icon">👣</div>
+                            <div class="achievement-details">
+                                <div class="achievement-name">Steps Taken</div>
+                                <div class="achievement-value" id="stepsCount">0</div>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon">💀</div>
+                            <div class="achievement-details">
+                                <div class="achievement-name">Monsters Killed</div>
+                                <div class="achievement-value" id="monstersKilled">0</div>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon">⛏️</div>
+                            <div class="achievement-details">
+                                <div class="achievement-name">Minerals Gathered</div>
+                                <div class="achievement-value" id="mineralsGathered">0</div>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon">🌲</div>
+                            <div class="achievement-details">
+                                <div class="achievement-name">Trees Harvested</div>
+                                <div class="achievement-value" id="treesGathered">0</div>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon">🌊</div>
+                            <div class="achievement-details">
+                                <div class="achievement-name">Lakes Fished</div>
+                                <div class="achievement-value" id="lakesGathered">0</div>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon">🎁</div>
+                            <div class="achievement-details">
+                                <div class="achievement-name">Items Found</div>
+                                <div class="achievement-value" id="itemsFound">0</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Item Preview Modal -->
+            <div class="modal" id="equipmentModal">
+                <div class="modal-content">
+                    <span class="modal-close">&times;</span>
+                    <div class="equipment-preview" id="equipmentPreviewContent">
+                        <!-- Equipment preview content will be generated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="game-footer">
+            <p>Horizons RPG - A Browser-Based Adventure Game</p>
+        </footer>
+    </div>
+    
+    <script src="js/main.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/items.js"></script>
+    <script src="js/character.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="js/firebase-config.js"></script>
+</body>
+</html>

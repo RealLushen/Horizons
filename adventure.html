@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure - Horizons RPG</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/notification.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/adventure.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Header with Navigation -->
+        <header class="game-header">
+            <div class="logo">Horizons RPG</div>
+            <nav class="nav-links">
+                <a href="adventure.html" class="nav-link">Adventure</a>
+                <a href="inventory.html" class="nav-link">Inventory</a>
+                <a href="market.html" class="nav-link">Market</a>
+                <a href="character.html" class="nav-link">Character</a>
+            </nav>
+            <div class="player-info">
+                <span id="playerGold">0g</span>
+                <span id="playerLevel">Lvl 1</span>
+            </div>
+        </header>
+        
+        <!-- Main Game Content -->
+        <div class="game-content">
+            <div class="adventure-container">
+                <!-- Player Status Bar -->
+                <div class="player-status">
+                    <div class="health-bar">
+                        <div class="health-label">Health: <span id="playerHealth">0/0</span></div>
+                        <div class="progress-container">
+                            <div class="progress-bar" id="healthBar" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="xp-bar">
+                        <div class="xp-label">Experience: <span id="playerExperience">0/0</span></div>
+                        <div class="progress-container">
+                            <div class="progress-bar" id="xpBar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Adventure Area -->
+                <div class="adventure-area">
+                    <div class="adventure-log" id="adventureLog">
+                        <div class="log-entry">Your adventure begins...</div>
+                    </div>
+                    
+                    <!-- Encounter Container -->
+                    <div class="encounter-container" id="encounterContainer">
+                        <!-- Content will be dynamically generated -->
+                    </div>
+                    
+                    <!-- Adventure Controls -->
+                    <div class="adventure-controls">
+                        <button id="goFurtherBtn" class="btn btn-primary btn-lg">Go Further</button>
+                    </div>
+                </div>
+                
+                <!-- Sidebar -->
+                <div class="adventure-sidebar">
+                    <!-- Player Stats Quick View -->
+                    <div class="card player-stats-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Your Character</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="player-avatar">
+                                <img id="playerAvatar" src="" alt="Player Avatar" />
+                                <span id="playerName">Adventurer</span>
+                            </div>
+                            <div class="player-stats">
+                                <div class="stat-item">
+                                    <span class="stat-label">Level:</span>
+                                    <span class="stat-value" id="statLevel">1</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Damage:</span>
+                                    <span class="stat-value" id="statDamage">2-4</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Health:</span>
+                                    <span class="stat-value" id="statHealth">100/100</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Gold:</span>
+                                    <span class="stat-value" id="statGold">0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Leaderboard -->
+                    <div class="card leaderboard-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Leaderboard</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="leaderboard" id="leaderboard">
+                                <!-- Leaderboard content will be dynamically generated -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="game-footer">
+            <p>Horizons RPG - A Browser-Based Adventure Game</p>
+        </footer>
+    </div>
+    
+    <script src="js/main.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/items.js"></script>
+    <script src="js/enemies.js"></script>
+    <script src="js/adventure.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="js/firebase-config.js"></script>
+</body>
+</html>

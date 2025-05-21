@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market - Horizons RPG</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/notification.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/market.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Header with Navigation -->
+        <header class="game-header">
+            <div class="logo">Horizons RPG</div>
+            <nav class="nav-links">
+                <a href="adventure.html" class="nav-link">Adventure</a>
+                <a href="inventory.html" class="nav-link">Inventory</a>
+                <a href="market.html" class="nav-link">Market</a>
+                <a href="character.html" class="nav-link">Character</a>
+            </nav>
+            <div class="player-info">
+                <span id="playerGold">0g</span>
+                <span id="playerLevel">Lvl 1</span>
+            </div>
+        </header>
+        
+        <!-- Main Game Content -->
+        <div class="game-content">
+            <div class="market-container">
+                <!-- Market Header -->
+                <div class="market-header">
+                    <h2>Market</h2>
+                    <p class="market-description">Sell your items to earn gold. The market refreshes periodically.</p>
+                </div>
+                
+                <!-- Market Tabs -->
+                <div class="market-tabs">
+                    <button class="market-tab active" data-tab="sell">Sell Items</button>
+                    <button class="market-tab" data-tab="buy">Buy Items</button>
+                </div>
+                
+                <!-- Market Content -->
+                <div class="market-content">
+                    <!-- Sell Tab -->
+                    <div class="market-tab-content active" id="sellTabContent">
+                        <div class="market-sell-filter">
+                            <select id="sellItemFilterSelect" class="item-filter-select">
+                                <option value="all">All Items</option>
+                                <option value="weapon">Weapons</option>
+                                <option value="armor">Armor</option>
+                                <option value="material">Materials</option>
+                                <option value="junk">Junk</option>
+                            </select>
+                        </div>
+                        
+                        <div class="market-item-list" id="sellItemList">
+                            <!-- Items will be dynamically generated here -->
+                            <div class="inventory-empty">You don't have any items to sell.</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Buy Tab -->
+                    <div class="market-tab-content" id="buyTabContent">
+                        <div class="market-buy-filter">
+                            <select id="buyItemFilterSelect" class="item-filter-select">
+                                <option value="all">All Items</option>
+                                <option value="weapon">Weapons</option>
+                                <option value="armor">Armor</option>
+                                <option value="material">Materials</option>
+                            </select>
+                        </div>
+                        
+                        <div class="market-item-list" id="buyItemList">
+                            <!-- Items will be dynamically generated here -->
+                            <div class="market-refresh-message">
+                                <p>No items for sale at the moment.</p>
+                                <p>The market inventory refreshes every hour. Check back later!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Item Preview Modal -->
+            <div class="modal" id="itemPreviewModal">
+                <div class="modal-content">
+                    <span class="modal-close">&times;</span>
+                    <div class="item-preview" id="itemPreviewContent">
+                        <!-- Item preview content will be generated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="game-footer">
+            <p>Horizons RPG - A Browser-Based Adventure Game</p>
+        </footer>
+    </div>
+    
+    <script src="js/main.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/items.js"></script>
+    <script src="js/market.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="js/firebase-config.js"></script>
+</body>
+</html>

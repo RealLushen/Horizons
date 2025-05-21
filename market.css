@@ -1,0 +1,184 @@
+/* Market Page Styles for Horizons RPG */
+
+.market-container {
+    background-color: var(--bg-secondary);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.market-header {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+}
+
+.market-header h2 {
+    color: var(--accent-primary);
+    font-size: 1.8rem;
+    margin-bottom: var(--space-sm);
+}
+
+.market-description {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.market-tabs {
+    display: flex;
+    gap: var(--space-sm);
+    background-color: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    padding: var(--space-xs);
+    margin-bottom: var(--space-lg);
+}
+
+.market-tab {
+    flex: 1;
+    padding: var(--space-sm) var(--space-md);
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    transition: all 0.3s ease;
+}
+
+.market-tab:hover {
+    color: var(--text-primary);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.market-tab.active {
+    background-color: var(--accent-primary);
+    color: white;
+}
+
+.market-content {
+    position: relative;
+}
+
+.market-tab-content {
+    display: none;
+}
+
+.market-tab-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.market-sell-filter,
+.market-buy-filter {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: var(--space-md);
+}
+
+.market-item-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.market-item-card {
+    background-color: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.market-item-card:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-sm);
+}
+
+.market-item-icon {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-secondary);
+    border-radius: var(--radius-sm);
+}
+
+.market-item-details {
+    flex-grow: 1;
+}
+
+.market-item-name {
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+}
+
+.market-item-stats {
+    display: flex;
+    gap: var(--space-md);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.market-item-price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.market-price-value {
+    font-weight: 600;
+    color: var(--accent-primary);
+}
+
+.price-cant-afford {
+    color: #e74c3c;
+}
+
+.market-refresh-message {
+    text-align: center;
+    padding: var(--space-xl);
+    color: var(--text-muted);
+}
+
+.market-refresh-message p:first-child {
+    font-size: 1.2rem;
+    margin-bottom: var(--space-md);
+}
+
+.market-empty {
+    text-align: center;
+    padding: var(--space-xl);
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .market-item-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .market-item-stats {
+        justify-content: center;
+    }
+    
+    .market-item-price {
+        margin-top: var(--space-sm);
+    }
+}
