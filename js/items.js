@@ -864,6 +864,7 @@ function generateMaterial(materialType, skillLevel = 1) {
     // Create a copy with unique ID
     const material = { ...baseItem };
     material.uniqueId = 'item_' + Date.now() + '_' + Math.floor(Math.random() * 1000);
+    material.value = material.baseValue; // Set value from baseValue
     
     return material;
 }
