@@ -3,6 +3,7 @@
 .adventure-container {
     display: grid;
     grid-template-columns: 1fr 300px;
+    grid-template-rows: auto auto auto 1fr;
     gap: var(--space-lg);
 }
 
@@ -10,11 +11,12 @@
 .player-status {
     display: flex;
     gap: var(--space-md);
-    margin-bottom: var(--space-md);
     background-color: var(--bg-secondary);
     padding: var(--space-md);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
+    grid-column: 1;
+    grid-row: 1;
 }
 
 .health-bar, .xp-bar {
@@ -36,26 +38,49 @@
     background-color: #3498db;
 }
 
-/* Adventure Area */
+/* Encounter Container - now a direct child of adventure-container */
+.encounter-container {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    grid-column: 1;
+    grid-row: 2;
+    box-shadow: var(--shadow-md);
+}
+
+/* Adventure Controls - now a direct child of adventure-container */
+.adventure-controls {
+    display: flex;
+    justify-content: center;
+    padding: var(--space-md) 0;
+    grid-column: 1;
+    grid-row: 3;
+}
+
+/* Adventure Area - now only contains the log */
 .adventure-area {
     display: flex;
     flex-direction: column;
-    gap: var(--space-md);
     background-color: var(--bg-secondary);
     padding: var(--space-lg);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-md);
     flex-grow: 1;
+    grid-column: 1;
+    grid-row: 4;
 }
 
 .adventure-log {
     background-color: var(--bg-tertiary);
     border-radius: var(--radius-md);
     padding: var(--space-md);
-    height: 200px;
+    height: 250px;
     overflow-y: auto;
     font-size: 0.9rem;
-    margin-bottom: var(--space-md);
 }
 
 .log-entry {
@@ -67,28 +92,13 @@
     border-bottom: none;
 }
 
-.encounter-container {
-    min-height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--bg-tertiary);
-    border-radius: var(--radius-md);
-    padding: var(--space-lg);
-    margin-bottom: var(--space-md);
-}
-
-.adventure-controls {
-    display: flex;
-    justify-content: center;
-    padding: var(--space-md) 0;
-}
-
-/* Sidebar */
+/* Sidebar - spans all rows */
 .adventure-sidebar {
     display: flex;
     flex-direction: column;
     gap: var(--space-lg);
+    grid-column: 2;
+    grid-row: 1 / span 4;
 }
 
 .player-stats-card {
@@ -233,10 +243,19 @@
 @media (max-width: 992px) {
     .adventure-container {
         grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto;
     }
     
     .adventure-sidebar {
-        order: -1;
-        margin-bottom: var(--space-md);
+        grid-column: 1;
+        grid-row: 5;
+        order: 5;
+    }
+    
+    .player-status,
+    .encounter-container,
+    .adventure-controls,
+    .adventure-area {
+        grid-column: 1;
     }
 }
